@@ -1,0 +1,12 @@
+{
+  "coupons": [
+    {
+      "id": "coupon-001",
+      "code": "CKRUN2026APRIL",
+      "description": "4월 대규모 업데이트 기념 보상",
+      "rewardImageURL": null,
+      "dateAdded": "2026-04-17T00:00:00Z",
+      "expirationDate": "2026-05-01T00:00:00Z"
+    }
+  ]
+}
