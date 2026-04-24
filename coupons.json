@@ -15,14 +15,6 @@
       "rewardImageURL": null,
       "dateAdded": "2026-04-17T00:00:00Z",
       "expirationDate": "2026-06-01T00:00:00Z"
-    },
-    {
-      "id": "coupon-003",
-      "code": "NEWCOUPON123",
-      "description": "새로운 쿠폰 설명",
-      "rewardImageURL": "https://keemlab.github.io/ckc/images/reward003.png",
-      "dateAdded": "2026-04-24T00:00:00Z",
-      "expirationDate": "2026-06-01T00:00:00Z"
     }
   ]
 }
