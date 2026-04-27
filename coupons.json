@@ -3,7 +3,7 @@
     {
       "id": "coupon-001",
       "code": "CKRUN2026APRIL",
-      "description": "4월 대규모 업데이트 기념 보상",
+      "description": "4ì ëê·ëª¨ ìë°ì´í¸ ê¸°ë ë³´ì",
       "rewardImageURL": null,
       "dateAdded": "2026-04-17T00:00:00Z",
       "expirationDate": "2026-05-01T00:00:00Z"
@@ -11,7 +11,7 @@
     {
       "id": "coupon-002",
       "code": "CKRUN2027APRIL",
-      "description": "5월 대규모 업데이트 기념 보상 (test)",
+      "description": "5ì ëê·ëª¨ ìë°ì´í¸ ê¸°ë ë³´ì (test)",
       "rewardImageURL": null,
       "dateAdded": "2026-04-17T00:00:00Z",
       "expirationDate": "2026-06-01T00:00:00Z"
@@ -19,7 +19,7 @@
     {
       "id": "coupon-003",
       "code": "CRKKPDHCOLLABNOW",
-      "description": "캐데헌",
+      "description": "ìºë°í",
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T00:00:00Z",
       "expirationDate": "2026-05-01T00:00:00Z"
@@ -27,10 +27,18 @@
     {
       "id": "coupon-004",
       "code": "TODEARESTFROMIHWAN",
-      "description": "김이환 작별선물",
+      "description": "ê¹ì´í ìë³ì ë¬¼",
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T00:00:00Z",
       "expirationDate": "2026-05-01T00:00:00Z"
+    },
+    {
+      "id": "17f17719-5baf-48d9-8f67-f6094ce06865",
+      "code": "2MSUBSCRIBERSCRK",
+      "description": "200만 기념",
+      "rewardImageURL": null,
+      "dateAdded": "2026-04-27T01:54:27.705Z",
+      "expirationDate": "2026-04-29T15:00:00.000Z"
     }
   ]
 }
