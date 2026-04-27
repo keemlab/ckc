@@ -18,10 +18,32 @@
     {
       "id": "coupon-004",
       "code": "TODEARESTFROMIHWAN",
-      "description": "ê¹ì´í ìë³ì ë¬¼",
+      "description": "김이환 작별선물",
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T00:00:00Z",
-      "expirationDate": "2026-05-01T00:00:00Z"
+      "expirationDate": "2026-05-01T00:00:00Z",
+      "rewards": [
+        {
+          "image": "images/Cookie_cutter_featured.webp",
+          "name": "쿠키커터",
+          "count": 10
+        },
+        {
+          "image": "images/Icon_butter_amber.webp",
+          "name": "버터호박석",
+          "count": 3
+        },
+        {
+          "image": "images/Icon_juicy_stamina_jelly.webp",
+          "name": "스태미나 젤리",
+          "count": 200
+        },
+        {
+          "image": "images/Icon_radiant_beascuit_dough.webp",
+          "name": "빛나는 비스킷 도우",
+          "count": 200
+        }
+      ]
     },
     {
       "id": "17f17719-5baf-48d9-8f67-f6094ce06865",
