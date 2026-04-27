@@ -30,7 +30,7 @@
       margin-bottom: 24px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    .card h2 { font-size: 15px; color: #555; margin-bottom: 12px; }
+    .card > h2 { font-size: 15px; color: #555; margin-bottom: 12px; }
 
     .token-row { display: flex; gap: 8px; flex-wrap: wrap; }
     .token-row input {
@@ -121,6 +121,147 @@
       font-size: 13px;
     }
 
+    /* Reward badges in table */
+    .reward-badges { display: flex; flex-wrap: wrap; gap: 5px; }
+    .reward-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      background: #f3f4f6;
+      border-radius: 6px;
+      padding: 3px 6px;
+    }
+    .reward-badge img { width: 22px; height: 22px; object-fit: contain; }
+    .reward-badge .badge-misc {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: bold;
+      color: white;
+      flex-shrink: 0;
+    }
+    .reward-badge-count { font-size: 12px; font-weight: 600; color: #374151; }
+
+    /* Reward picker */
+    .reward-picker-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .reward-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 7px;
+      max-height: 340px;
+      overflow-y: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 10px;
+      background: #fafafa;
+      margin-bottom: 16px;
+    }
+    .reward-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 9px;
+      background: white;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.12s, background 0.12s;
+      user-select: none;
+      min-width: 0;
+    }
+    .reward-item.selected {
+      border-color: #2563eb;
+      background: #eff6ff;
+    }
+    .reward-item img {
+      width: 28px; height: 28px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .misc-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      flex-shrink: 0;
+    }
+    .reward-label {
+      font-size: 11px;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #374151;
+    }
+    .misc-name-input {
+      font-size: 11px;
+      flex: 1;
+      min-width: 0;
+      padding: 2px 5px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      background: white;
+    }
+    .misc-name-input:disabled {
+      background: transparent;
+      border-color: transparent;
+      color: #9ca3af;
+    }
+    .count-input {
+      width: 44px;
+      padding: 3px 4px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      font-size: 12px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .count-input:disabled {
+      background: transparent;
+      border-color: transparent;
+      color: #d1d5db;
+    }
+    .misc-remove {
+      background: none;
+      border: none;
+      color: #ef4444;
+      cursor: pointer;
+      padding: 0 2px;
+      font-size: 14px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .add-misc-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 7px;
+      background: white;
+      border: 1.5px dashed #d1d5db;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #6b7280;
+      transition: border-color 0.12s, color 0.12s;
+    }
+    .add-misc-btn:hover { border-color: #6b7280; color: #374151; }
+
+    /* Form */
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -131,7 +272,8 @@
 
     .form-group { display: flex; flex-direction: column; gap: 6px; }
     .form-group label { font-size: 13px; font-weight: 600; color: #374151; }
-    .form-group input {
+    .form-group input[type="text"],
+    .form-group input[type="date"] {
       padding: 9px 12px;
       border: 1px solid #d1d5db;
       border-radius: 6px;
@@ -161,7 +303,9 @@
       border-radius: 10px;
       padding: 24px;
       width: 100%;
-      max-width: 480px;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
     .modal h3 { margin-bottom: 20px; font-size: 17px; }
@@ -191,9 +335,7 @@
     .toast.error   { background: #ef4444; }
 
     .state-msg { text-align: center; padding: 40px; color: #9ca3af; font-size: 14px; }
-
     .actions { display: flex; gap: 6px; flex-wrap: wrap; }
-
     .hint { font-size: 12px; color: #9ca3af; margin-top: 6px; }
   </style>
 </head>
@@ -239,14 +381,12 @@
         <input type="text" id="addDesc" placeholder="쿠폰 설명">
       </div>
       <div class="form-group">
-        <label>이미지 URL <span style="font-weight:normal;color:#9ca3af">(선택)</span></label>
-        <input type="url" id="addImageURL" placeholder="https://...">
-      </div>
-      <div class="form-group">
         <label>만료일 <span style="font-weight:normal;color:#9ca3af">(선택)</span></label>
         <input type="date" id="addExpiry">
       </div>
     </div>
+    <span class="reward-picker-label">보상 <span style="font-weight:normal;color:#9ca3af">(선택)</span></span>
+    <div class="reward-grid" id="addRewardPicker"></div>
     <button class="btn btn-success" onclick="addCoupon()">+ 쿠폰 추가</button>
   </div>
 
@@ -267,14 +407,12 @@
         <input type="text" id="editDesc">
       </div>
       <div class="form-group">
-        <label>이미지 URL <span style="font-weight:normal;color:#9ca3af">(선택)</span></label>
-        <input type="url" id="editImageURL">
-      </div>
-      <div class="form-group">
         <label>만료일 <span style="font-weight:normal;color:#9ca3af">(선택)</span></label>
         <input type="date" id="editExpiry">
       </div>
     </div>
+    <span class="reward-picker-label">보상</span>
+    <div class="reward-grid" id="editRewardPicker"></div>
     <div class="modal-actions">
       <button class="btn btn-secondary" onclick="closeEdit()">취소</button>
       <button class="btn btn-primary" onclick="saveEdit()">저장</button>
@@ -282,7 +420,6 @@
   </div>
 </div>
 
-<!-- Toast -->
 <div id="toast" class="toast"></div>
 
 <script>
@@ -292,6 +429,138 @@ const API  = `https://api.github.com/repos/${REPO}/contents/${FILE}`;
 
 let currentData = null;
 let currentSHA  = null;
+
+// ── Reward definitions ────────────────────────────────────────────────────────
+
+const REWARD_ITEMS = [
+  { file: 'Cookie_cutter_featured.webp',     name: '쿠키커터' },
+  { file: 'Currency_crystal.webp',            name: '크리스탈' },
+  { file: 'Currency_rainbow_cube.webp',       name: '무지개 큐브' },
+  { file: 'Exp_star_jelly_5.webp',            name: '별사탕 Lv.5' },
+  { file: 'Exp_star_jelly_6.webp',            name: '별사탕 Lv.6' },
+  { file: 'Icon_arcane_crystals.webp',        name: '신비 크리스탈' },
+  { file: 'Icon_butter_amber.webp',           name: '버터호박석' },
+  { file: 'Icon_choco_chalk.webp',            name: '초코분필' },
+  { file: 'Icon_fateful_cookie_tickets.webp', name: '운명의 쿠키 티켓' },
+  { file: 'Icon_juicy_stamina_jelly.webp',    name: '스태미나 젤리' },
+  { file: 'Icon_purity_crystals.webp',        name: '순수 크리스탈' },
+  { file: 'Icon_radiant_beascuit_dough.webp', name: '빛나는 비스킷 도우' },
+  { file: 'Icon_strength_crystals-2.webp',    name: '강인함 크리스탈' },
+  { file: 'Icon_swiftness_crystals.webp',     name: '민첩 크리스탈' },
+  { file: 'Icon_time_jumper.webp',            name: '타임 점퍼' },
+  { file: 'Material_rare_aurora_brick.webp',  name: '희귀 오로라 벽돌' },
+  { file: 'Material_rare_aurora_compass.webp',name: '희귀 오로라 나침반' },
+  { file: 'Material_rare_aurora_pillar.webp', name: '희귀 오로라 기둥' },
+];
+
+const MISC_COLORS = ['#f03e3e','#e67700','#2f9e44','#1971c2','#7048e8','#c2255c','#0c8599'];
+
+function randomMiscColor() {
+  return MISC_COLORS[Math.floor(Math.random() * MISC_COLORS.length)];
+}
+
+// ── Reward picker ─────────────────────────────────────────────────────────────
+
+function buildRewardPicker(containerId, existing) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+
+  REWARD_ITEMS.forEach(item => {
+    const imgPath = `images/${item.file}`;
+    const ex = (existing || []).find(r => r.image === imgPath);
+    const selected = !!ex;
+    const count = ex ? ex.count : 1;
+
+    const el = document.createElement('div');
+    el.className = 'reward-item' + (selected ? ' selected' : '');
+    el.innerHTML = `
+      <img src="${escHtml(imgPath)}" alt="${escHtml(item.name)}">
+      <span class="reward-label">${escHtml(item.name)}</span>
+      <input type="number" class="count-input" min="1" value="${count}" ${selected ? '' : 'disabled'} onclick="event.stopPropagation()">
+    `;
+    el.addEventListener('click', e => {
+      if (e.target.tagName === 'INPUT') return;
+      const ci = el.querySelector('.count-input');
+      const on = el.classList.toggle('selected');
+      ci.disabled = !on;
+      if (on) ci.focus();
+    });
+    container.appendChild(el);
+  });
+
+  // Existing misc rewards
+  const knownPaths = REWARD_ITEMS.map(i => `images/${i.file}`);
+  (existing || [])
+    .filter(r => !knownPaths.includes(r.image))
+    .forEach(r => appendMiscRow(container, r.name, r.count, r.miscColor || randomMiscColor()));
+
+  container.appendChild(makeMiscAddBtn(container));
+}
+
+function makeMiscAddBtn(container) {
+  const btn = document.createElement('div');
+  btn.className = 'add-misc-btn';
+  btn.innerHTML = '＋ 기타 추가';
+  btn.addEventListener('click', () => {
+    const color = randomMiscColor();
+    const row = appendMiscRow(container, '', 1, color);
+    container.insertBefore(row, btn); // keep btn at end
+    row.querySelector('.misc-name-input').focus();
+  });
+  return btn;
+}
+
+function appendMiscRow(container, name, count, color) {
+  const el = document.createElement('div');
+  el.className = 'reward-item selected';
+  el.dataset.misc = '1';
+  el.dataset.color = color;
+  el.innerHTML = `
+    <div class="misc-icon" style="background:${escHtml(color)}">?</div>
+    <input type="text" class="misc-name-input" placeholder="보상명" value="${escHtml(name)}" onclick="event.stopPropagation()">
+    <input type="number" class="count-input" min="1" value="${count}" onclick="event.stopPropagation()">
+    <button class="misc-remove" title="제거" onclick="event.stopPropagation();this.closest('.reward-item').remove()">✕</button>
+  `;
+  const addBtn = container.querySelector('.add-misc-btn');
+  if (addBtn) container.insertBefore(el, addBtn);
+  else container.appendChild(el);
+  return el;
+}
+
+function collectRewards(containerId) {
+  const rewards = [];
+  document.getElementById(containerId)
+    .querySelectorAll('.reward-item.selected')
+    .forEach(el => {
+      const count = parseInt(el.querySelector('.count-input').value) || 1;
+      if (el.dataset.misc) {
+        const name = el.querySelector('.misc-name-input').value.trim() || '기타';
+        rewards.push({ image: null, name, count, miscColor: el.dataset.color });
+      } else {
+        const img  = el.querySelector('img');
+        const name = el.querySelector('.reward-label').textContent;
+        rewards.push({ image: img.getAttribute('src'), name, count });
+      }
+    });
+  return rewards;
+}
+
+function renderRewardBadges(rewards, legacyURL) {
+  // New format
+  if (rewards && rewards.length) {
+    return `<div class="reward-badges">${rewards.map(r => {
+      const icon = r.image
+        ? `<img src="${escHtml(r.image)}" alt="${escHtml(r.name)}">`
+        : `<span class="badge-misc" style="background:${escHtml(r.miscColor||'#9ca3af')}">?</span>`;
+      return `<div class="reward-badge" title="${escHtml(r.name)}">${icon}<span class="reward-badge-count">×${r.count}</span></div>`;
+    }).join('')}</div>`;
+  }
+  // Backward compat
+  if (legacyURL) {
+    return `<div class="reward-badges"><div class="reward-badge"><img src="${escHtml(legacyURL)}" alt="보상" onerror="this.style.opacity=0.3"></div></div>`;
+  }
+  return '—';
+}
 
 // ── Token ─────────────────────────────────────────────────────────────────────
 
@@ -348,7 +617,7 @@ async function loadCoupons() {
   const el = document.getElementById('couponTable');
   el.innerHTML = '<div class="state-msg">불러오는 중...</div>';
   try {
-    const data = await apiFetch(API);
+    const data  = await apiFetch(API);
     currentSHA  = data.sha;
     const raw   = atob(data.content.replace(/\n/g, ''));
     currentData = JSON.parse(decodeURIComponent(escape(raw)));
@@ -359,7 +628,6 @@ async function loadCoupons() {
 }
 
 async function commitCoupons(message) {
-  // btoa with Unicode support
   const json    = JSON.stringify(currentData, null, 2);
   const encoded = btoa(unescape(encodeURIComponent(json)));
   const res = await apiFetch(API, {
@@ -385,8 +653,7 @@ function toISO(dateStr) {
 }
 
 function toDateInput(isoStr) {
-  if (!isoStr) return '';
-  return isoStr.slice(0, 10);
+  return isoStr ? isoStr.slice(0, 10) : '';
 }
 
 function statusBadge(expiry) {
@@ -440,10 +707,7 @@ function renderTable() {
               <td style="white-space:nowrap">${statusBadge(c.expirationDate)}</td>
               <td><span class="code-text">${escHtml(c.code)}</span></td>
               <td>${escHtml(c.description)}</td>
-              <td>${c.rewardImageURL
-                ? `<img src="${escHtml(c.rewardImageURL)}" alt="보상" style="height:28px;width:auto;vertical-align:middle;border-radius:4px;" onerror="this.style.display='none';this.nextSibling.style.display='inline'">`
-                  + `<span style="display:none;font-size:12px;color:#ef4444">오류</span>`
-                : '—'}</td>
+              <td>${renderRewardBadges(c.rewards, c.rewardImageURL)}</td>
               <td style="font-size:12px;white-space:nowrap;line-height:1.7">
                 <span style="color:#9ca3af">추가</span> ${formatDate(c.dateAdded)}<br>
                 <span style="color:#9ca3af">만료</span> ${formatDate(c.expirationDate)}
@@ -469,14 +733,14 @@ async function addCoupon() {
   if (!getToken())     return showToast('토큰을 먼저 설정하세요.', 'error');
   if (!currentData)    return showToast('먼저 목록을 불러오세요.', 'error');
 
-  const imageURL = document.getElementById('addImageURL').value.trim() || null;
-  const expiry   = toISO(document.getElementById('addExpiry').value) || null;
+  const rewards = collectRewards('addRewardPicker');
+  const expiry  = toISO(document.getElementById('addExpiry').value) || null;
 
   const newCoupon = {
     id: genUUID(),
     code,
     description: desc,
-    rewardImageURL: imageURL,
+    rewards,
     dateAdded: new Date().toISOString().slice(0, 10) + 'T00:00:00Z',
     expirationDate: expiry,
   };
@@ -485,9 +749,10 @@ async function addCoupon() {
   try {
     await commitCoupons(`쿠폰 추가: ${code}`);
     renderTable();
-    ['addCode','addDesc','addImageURL','addExpiry'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
+    document.getElementById('addCode').value  = '';
+    document.getElementById('addDesc').value  = '';
+    document.getElementById('addExpiry').value = '';
+    buildRewardPicker('addRewardPicker');
     showToast(`쿠폰 "${code}" 추가됐어요.`, 'success');
   } catch (e) {
     currentData.coupons.pop();
@@ -518,11 +783,11 @@ async function deleteCoupon(id, code) {
 function openEdit(id) {
   const c = currentData?.coupons.find(x => x.id === id);
   if (!c) return;
-  document.getElementById('editId').value       = c.id;
-  document.getElementById('editCode').value     = c.code;
-  document.getElementById('editDesc').value     = c.description;
-  document.getElementById('editImageURL').value = c.rewardImageURL || '';
-  document.getElementById('editExpiry').value   = toDateInput(c.expirationDate);
+  document.getElementById('editId').value     = c.id;
+  document.getElementById('editCode').value   = c.code;
+  document.getElementById('editDesc').value   = c.description;
+  document.getElementById('editExpiry').value = toDateInput(c.expirationDate);
+  buildRewardPicker('editRewardPicker', c.rewards || []);
   document.getElementById('editModal').classList.add('open');
 }
 
@@ -537,8 +802,8 @@ async function saveEdit() {
   if (!code || !desc) return showToast('코드와 설명은 필수입니다.', 'error');
   if (!getToken())     return showToast('토큰을 먼저 설정하세요.', 'error');
 
-  const imageURL = document.getElementById('editImageURL').value.trim() || null;
-  const expiry   = toISO(document.getElementById('editExpiry').value) || null;
+  const rewards = collectRewards('editRewardPicker');
+  const expiry  = toISO(document.getElementById('editExpiry').value) || null;
 
   const idx = currentData.coupons.findIndex(c => c.id === id);
   if (idx === -1) return showToast('쿠폰을 찾을 수 없습니다.', 'error');
@@ -548,7 +813,7 @@ async function saveEdit() {
     ...currentData.coupons[idx],
     code,
     description: desc,
-    rewardImageURL: imageURL,
+    rewards,
     expirationDate: expiry,
   };
 
@@ -581,6 +846,7 @@ document.getElementById('editModal').addEventListener('click', e => {
 });
 
 updateTokenStatus();
+buildRewardPicker('addRewardPicker');
 loadCoupons();
 </script>
 </body>
