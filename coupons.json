@@ -15,6 +15,14 @@
       "rewardImageURL": null,
       "dateAdded": "2026-04-17T00:00:00Z",
       "expirationDate": "2026-06-01T00:00:00Z"
+    },
+    {
+      "id": "coupon-003",
+      "code": "CRKKPDHCOLLABNOW",
+      "description": "캐데헌",
+      "rewardImageURL": null,
+      "dateAdded": "2026-04-27T00:00:00Z",
+      "expirationDate": "2026-05-01T00:00:00Z"
     }
   ]
 }
