@@ -23,6 +23,14 @@
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T00:00:00Z",
       "expirationDate": "2026-05-01T00:00:00Z"
+    },
+    {
+      "id": "coupon-004",
+      "code": "TODEARESTFROMIHWAN",
+      "description": "김이환 작별선물",
+      "rewardImageURL": null,
+      "dateAdded": "2026-04-27T00:00:00Z",
+      "expirationDate": "2026-05-01T00:00:00Z"
     }
   ]
 }
