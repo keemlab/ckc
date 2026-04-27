@@ -51,7 +51,24 @@
       "description": "200만 기념",
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T01:54:27.705Z",
-      "expirationDate": "2026-04-29T15:00:00.000Z"
+      "expirationDate": "2026-04-29T00:00:00Z",
+      "rewards": [
+        {
+          "image": "images/Currency_crystal.webp",
+          "name": "크리스탈",
+          "count": 10000
+        },
+        {
+          "image": "images/Currency_rainbow_cube.webp",
+          "name": "무지개 큐브",
+          "count": 7000
+        },
+        {
+          "image": "images/Icon_choco_chalk.webp",
+          "name": "초코분필",
+          "count": 3000
+        }
+      ]
     },
     {
       "id": "cc6b62ab-c3c0-4f77-a117-e4ea5d62da3e",
