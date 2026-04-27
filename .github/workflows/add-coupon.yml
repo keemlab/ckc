@@ -1,0 +1,79 @@
+name: 쿠폰 추가
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: '쿠폰 코드 (자동 대문자 변환)'
+        required: true
+        type: string
+      description:
+        description: '쿠폰 설명'
+        required: true
+        type: string
+      rewardImageURL:
+        description: '이미지 URL (선택)'
+        required: false
+        type: string
+      expirationDate:
+        description: '만료일 — ISO 8601 형식 (예: 2026-12-31T23:59:59Z) (선택)'
+        required: false
+        type: string
+
+jobs:
+  add-coupon:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 쿠폰 추가
+        env:
+          INPUT_CODE:            ${{ inputs.code }}
+          INPUT_DESCRIPTION:     ${{ inputs.description }}
+          INPUT_REWARD_IMAGE_URL: ${{ inputs.rewardImageURL }}
+          INPUT_EXPIRATION_DATE:  ${{ inputs.expirationDate }}
+        run: |
+          python3 - <<'PYEOF'
+          import json, uuid, os
+          from datetime import datetime, timezone
+
+          with open('coupons.json', 'r', encoding='utf-8') as f:
+              data = json.load(f)
+
+          code        = os.environ['INPUT_CODE'].strip().upper()
+          description = os.environ['INPUT_DESCRIPTION'].strip()
+          image_url   = os.environ.get('INPUT_REWARD_IMAGE_URL', '').strip() or None
+          expiry      = os.environ.get('INPUT_EXPIRATION_DATE', '').strip() or None
+
+          new_coupon = {
+              'id':              str(uuid.uuid4()),
+              'code':            code,
+              'description':     description,
+              'rewardImageURL':  image_url,
+              'dateAdded':       datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+              'expirationDate':  expiry,
+          }
+
+          data['coupons'].append(new_coupon)
+
+          with open('coupons.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+              f.write('\n')
+
+          print(f"✅ 쿠폰 추가됨")
+          print(f"   id:   {new_coupon['id']}")
+          print(f"   code: {new_coupon['code']}")
+          print(f"   만료일: {new_coupon['expirationDate'] or '없음'}")
+          PYEOF
+
+      - name: 커밋 & 푸시
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add coupons.json
+          git commit -m "쿠폰 추가: ${{ inputs.code }}"
+          git push
