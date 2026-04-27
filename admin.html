@@ -429,23 +429,25 @@ function renderTable() {
             <th>상태</th>
             <th>코드</th>
             <th>설명</th>
-            <th>이미지</th>
-            <th>추가일</th>
-            <th>만료일</th>
+            <th>보상</th>
+            <th>날짜</th>
             <th>작업</th>
           </tr>
         </thead>
         <tbody>
           ${coupons.map(c => `
             <tr>
-              <td>${statusBadge(c.expirationDate)}</td>
+              <td style="white-space:nowrap">${statusBadge(c.expirationDate)}</td>
               <td><span class="code-text">${escHtml(c.code)}</span></td>
               <td>${escHtml(c.description)}</td>
               <td>${c.rewardImageURL
-                ? `<a href="${escHtml(c.rewardImageURL)}" target="_blank" rel="noopener" style="font-size:12px;color:#2563eb">링크</a>`
+                ? `<img src="${escHtml(c.rewardImageURL)}" alt="보상" style="height:28px;width:auto;vertical-align:middle;border-radius:4px;" onerror="this.style.display='none';this.nextSibling.style.display='inline'">`
+                  + `<span style="display:none;font-size:12px;color:#ef4444">오류</span>`
                 : '—'}</td>
-              <td style="font-size:13px;white-space:nowrap">${formatDate(c.dateAdded)}</td>
-              <td style="font-size:13px;white-space:nowrap">${formatDate(c.expirationDate)}</td>
+              <td style="font-size:12px;white-space:nowrap;line-height:1.7">
+                <span style="color:#9ca3af">추가</span> ${formatDate(c.dateAdded)}<br>
+                <span style="color:#9ca3af">만료</span> ${formatDate(c.expirationDate)}
+              </td>
               <td>
                 <div class="actions">
                   <button class="btn btn-warning btn-sm" data-id="${escHtml(c.id)}" onclick="openEdit(this.dataset.id)">수정</button>
