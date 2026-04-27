@@ -23,6 +23,25 @@
       "rewardImageURL": null,
       "dateAdded": "2026-04-27T01:54:27.705Z",
       "expirationDate": "2026-04-29T15:00:00.000Z"
+    },
+    {
+      "id": "cc6b62ab-c3c0-4f77-a117-e4ea5d62da3e",
+      "code": "DEVNOW2026THANKU",
+      "description": "DEVNOW2026THANKU",
+      "rewards": [
+        {
+          "image": "images/Currency_crystal.webp",
+          "name": "크리스탈",
+          "count": 3000
+        },
+        {
+          "image": "images/Currency_rainbow_cube.webp",
+          "name": "무지개 큐브",
+          "count": 1500
+        }
+      ],
+      "dateAdded": "2026-04-27T00:00:00Z",
+      "expirationDate": "2026-04-30T00:00:00Z"
     }
   ]
 }
