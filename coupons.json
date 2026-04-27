@@ -1,14 +1,6 @@
 {
   "coupons": [
     {
-      "id": "coupon-002",
-      "code": "CKRUN2027APRIL",
-      "description": "5ì ëê·ëª¨ ìë°ì´í¸ ê¸°ë ë³´ì (test)",
-      "rewardImageURL": null,
-      "dateAdded": "2026-04-17T00:00:00Z",
-      "expirationDate": "2026-06-01T00:00:00Z"
-    },
-    {
       "id": "coupon-003",
       "code": "CRKKPDHCOLLABNOW",
       "description": "ìºë°í",
