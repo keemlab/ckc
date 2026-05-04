@@ -16,25 +16,6 @@
       ]
     },
     {
-      "id": "cc6b62ab-c3c0-4f77-a117-e4ea5d62da3e",
-      "code": "DEVNOW2026THANKU",
-      "description": "DEVNOW2026THANKU",
-      "rewards": [
-        {
-          "image": "images/Currency_crystal.webp",
-          "name": "크리스탈",
-          "count": 3000
-        },
-        {
-          "image": "images/Currency_rainbow_cube.webp",
-          "name": "무지개 큐브",
-          "count": 1500
-        }
-      ],
-      "dateAdded": "2026-04-27T00:00:00Z",
-      "expirationDate": "2026-04-30T00:00:00Z"
-    },
-    {
       "id": "76dd4d28-d68c-4124-b435-7312c32c96ea",
       "code": "CRKCHRONOSLIVE26",
       "description": "라이브 쿠폰",
