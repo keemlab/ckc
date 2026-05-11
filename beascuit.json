@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-05-11",
+  "elementEpisodes": {
+    "water": [1, 2],
+    "darkness": [3, 4],
+    "electricity": [3, 4],
+    "fire": [5, 6],
+    "earth": [5, 6],
+    "poison": [7, 8],
+    "light": [7, 8],
+    "ice": [9, 10],
+    "steel": [9, 10],
+    "grass": [11, 12],
+    "wind": [11, 12],
+    "chaos": []
+  },
+  "stageRanges": ["1~4", "5~8", "9~12", "13~16", "17~20", "21~24", "25~28"],
+  "sets": [
+    {
+      "set": 1,
+      "drops": [
+        ["defense", "bomber"],
+        ["defense", "ambush"],
+        ["defense", "ranged"],
+        ["defense", "charge"],
+        ["defense", "magic"],
+        ["defense", "support"],
+        ["defense", "healing"]
+      ]
+    },
+    {
+      "set": 2,
+      "drops": [
+        ["ambush", "healing"],
+        ["charge", "support"],
+        ["charge", "healing"],
+        ["ambush", "ranged"],
+        ["charge", "ambush"],
+        ["charge", "ranged"],
+        ["charge", "bomber"]
+      ]
+    },
+    {
+      "set": 3,
+      "drops": [
+        ["ranged", "support"],
+        ["ranged", "bomber"],
+        ["ambush", "bomber"],
+        ["bomber", "magic"],
+        ["bomber", "support"],
+        ["ambush", "magic"],
+        ["ranged", "magic"]
+      ]
+    },
+    {
+      "set": 4,
+      "drops": [
+        ["charge", "magic"],
+        ["magic", "healing"],
+        ["magic", "support"],
+        ["support", "healing"],
+        ["ranged", "healing"],
+        ["bomber", "healing"],
+        ["ambush", "support"]
+      ]
+    }
+  ]
+}
