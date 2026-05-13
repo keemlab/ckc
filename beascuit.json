@@ -1,29 +1,87 @@
 {
-  "version": 2,
+  "version": 3,
   "lastUpdated": "2026-05-13",
   "elementEpisodes": {
-    "water": [1, 2],
-    "darkness": [3, 4],
-    "electricity": [3, 4],
-    "fire": [5, 6],
-    "earth": [5, 6],
-    "poison": [7, 8],
-    "light": [7, 8],
-    "ice": [9, 10],
-    "steel": [9, 10],
-    "grass": [11, 12],
-    "wind": [11, 12],
-    "chaos": [13, 14]
+    "water": [1, 2, 15],
+    "darkness": [3, 4, 15],
+    "electricity": [3, 4, 15],
+    "fire": [5, 6, 15],
+    "earth": [5, 6, 15],
+    "poison": [7, 8, 15],
+    "light": [7, 8, 15],
+    "ice": [9, 10, 15],
+    "steel": [9, 10, 15],
+    "grass": [11, 12, 15],
+    "wind": [11, 12, 15],
+    "chaos": [13, 14, 15]
   },
   "episodes": {
     "default": {
-      "bossPositions": [],
+      "bossPositions": [15, 30],
       "sets": [
         [["defense","bomber"],["defense","ambush"],["defense","ranged"],["defense","charge"],["defense","magic"],["defense","support"],["defense","healing"]],
         [["ambush","healing"],["charge","support"],["charge","healing"],["ambush","ranged"],["charge","ambush"],["charge","ranged"],["charge","bomber"]],
         [["ranged","support"],["ranged","bomber"],["ambush","bomber"],["bomber","magic"],["bomber","support"],["ambush","magic"],["ranged","magic"]],
         [["charge","magic"],["magic","healing"],["magic","support"],["support","healing"],["ranged","healing"],["bomber","healing"],["ambush","support"]]
       ]
+    },
+    "ep1": {
+      "bossPositions": [18, 30]
+    },
+    "ep2": {
+      "bossPositions": [10, 28]
+    },
+    "ep3": {
+      "bossPositions": [10, 30]
+    },
+    "ep4": {
+      "bossPositions": [19, 30]
+    },
+    "ep5": {
+      "bossPositions": [14, 30]
+    },
+    "ep6": {
+      "bossPositions": [16, 30]
+    },
+    "ep7": {
+      "bossPositions": [16, 30]
+    },
+    "ep8": {
+      "bossPositions": [15, 30]
+    },
+    "ep9": {
+      "bossPositions": [15, 30]
+    },
+    "ep10": {
+      "bossPositions": [15, 30]
+    },
+    "ep11": {
+      "bossPositions": [15, 30]
+    },
+    "ep12": {
+      "bossPositions": [17, 30]
+    },
+    "ep13": {
+      "bossPositions": [16, 30]
+    },
+    "ep14": {
+      "bossPositions": [15, 30]
+    },
+    "ep15": {
+      "allTypesStages": {
+        "water": 1,
+        "electricity": 2,
+        "darkness": 3,
+        "fire": 4,
+        "earth": 5,
+        "poison": 6,
+        "light": 7,
+        "ice": 8,
+        "steel": 9,
+        "grass": 10,
+        "wind": 11,
+        "chaos": 12
+      }
     }
   }
 }
