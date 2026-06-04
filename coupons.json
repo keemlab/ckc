@@ -54,40 +54,6 @@
       ],
       "dateAdded": "2026-04-29T00:00:00Z",
       "expirationDate": "2026-05-13T00:00:00Z"
-    },
-    {
-      "id": "a5dd38df-d152-4ed9-9f83-815cba0c960d",
-      "code": "CRKCHRONOSLIVE26",
-      "description": "라이브 쿠폰",
-      "rewards": [
-        {
-          "image": "images/Cookie_cutter_featured.webp",
-          "name": "쿠키커터 (피처드)",
-          "count": 20
-        },
-        {
-          "image": "images/Currency_crystal.webp",
-          "name": "크리스탈",
-          "count": 5000
-        },
-        {
-          "image": "images/Currency_rainbow_cube.webp",
-          "name": "무지개 큐브",
-          "count": 5000
-        },
-        {
-          "image": "images/Icon_butter_amber.webp",
-          "name": "버터호박석",
-          "count": 5
-        },
-        {
-          "image": "images/Icon_radiant_beascuit_dough.webp",
-          "name": "빛나는 비스킷 도우",
-          "count": 200
-        }
-      ],
-      "dateAdded": "2026-06-04T00:00:00Z",
-      "expirationDate": "2026-06-27T00:00:00Z"
     }
   ]
 }
