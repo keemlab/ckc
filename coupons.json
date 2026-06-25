@@ -54,6 +54,20 @@
       ],
       "dateAdded": "2026-04-29T00:00:00Z",
       "expirationDate": "2026-05-13T00:00:00Z"
+    },
+    {
+      "id": "7afc763b-c006-4554-8565-cc4a24438b67",
+      "code": "SCOOPVOICEACTORS",
+      "description": "라이브 쿠폰",
+      "rewards": [
+        {
+          "image": "images/Currency_rainbow_cube.webp",
+          "name": "무지개 큐브",
+          "count": 3000
+        }
+      ],
+      "dateAdded": "2026-06-25T00:00:00Z",
+      "expirationDate": "2026-07-25T00:00:00Z"
     }
   ]
 }
