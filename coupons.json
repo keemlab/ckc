@@ -68,6 +68,14 @@
       ],
       "dateAdded": "2026-06-25T00:00:00Z",
       "expirationDate": "2026-07-25T00:00:00Z"
+    },
+    {
+      "id": "e755e813-7731-490e-8d54-6bbc403b0ce4",
+      "code": "CRKREBIRTHLIVE",
+      "description": "라이브 쿠폰",
+      "rewards": [],
+      "dateAdded": "2026-07-27T00:00:00Z",
+      "expirationDate": null
     }
   ]
 }
