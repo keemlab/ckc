@@ -72,10 +72,42 @@
     {
       "id": "e755e813-7731-490e-8d54-6bbc403b0ce4",
       "code": "CRKREBIRTHLIVE",
-      "description": "라이브 쿠폰",
-      "rewards": [],
+      "description": "경오PD의 스페셜 쿠폰 선물",
+      "rewards": [
+        {
+          "image": "images/Cookie_cutter_featured.webp",
+          "name": "쿠키커터 (피처드)",
+          "count": 20
+        },
+        {
+          "image": "images/Currency_crystal.webp",
+          "name": "크리스탈",
+          "count": 5000
+        },
+        {
+          "image": "images/Currency_rainbow_cube.webp",
+          "name": "무지개 큐브",
+          "count": 5000
+        },
+        {
+          "image": "images/Icon_butter_amber.webp",
+          "name": "버터호박석",
+          "count": 10
+        },
+        {
+          "image": "images/Icon_radiant_beascuit_dough.webp",
+          "name": "빛나는 비스킷 도우",
+          "count": 300
+        },
+        {
+          "image": null,
+          "name": "운명의 스테미나 젤리",
+          "count": 100,
+          "miscColor": "#e67700"
+        }
+      ],
       "dateAdded": "2026-07-27T00:00:00Z",
-      "expirationDate": null
+      "expirationDate": "2026-08-27T00:00:00Z"
     }
   ]
 }
