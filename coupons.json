@@ -104,6 +104,12 @@
           "name": "운명의 스테미나 젤리",
           "count": 100,
           "miscColor": "#e67700"
+        },
+        {
+          "image": null,
+          "name": "달콤한 망각의 강물 프로필",
+          "count": 1,
+          "miscColor": "#f03e3e"
         }
       ],
       "dateAdded": "2026-07-27T00:00:00Z",
