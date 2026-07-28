@@ -76,7 +76,7 @@
       "rewards": [
         {
           "image": "images/Cookie_cutter_featured.webp",
-          "name": "쿠키커터 (피처드)",
+          "name": "특별한 쿠키커터",
           "count": 20
         },
         {
@@ -95,15 +95,14 @@
           "count": 10
         },
         {
+          "image": "images/Icon_fateful_stamina_jelly.png",
+          "name": "운명의 스테미너 젤리",
+          "count": 100
+        },
+        {
           "image": "images/Icon_radiant_beascuit_dough.webp",
           "name": "빛나는 비스킷 도우",
           "count": 300
-        },
-        {
-          "image": null,
-          "name": "운명의 스테미나 젤리",
-          "count": 100,
-          "miscColor": "#e67700"
         },
         {
           "image": null,
