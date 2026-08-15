@@ -113,6 +113,30 @@
       ],
       "dateAdded": "2026-07-27T00:00:00Z",
       "expirationDate": "2026-08-16T00:00:00Z"
+    },
+    {
+      "id": "99867dca-fefa-4051-a9f4-da1c3c228694",
+      "code": "MISSEARTHBREAD26",
+      "description": "Miss Earthbread 2026 참가",
+      "rewards": [
+        {
+          "image": "images/Currency_crystal.webp",
+          "name": "크리스탈",
+          "count": 1500
+        },
+        {
+          "image": "images/Currency_rainbow_cube.webp",
+          "name": "무지개 큐브",
+          "count": 500
+        },
+        {
+          "image": "images/Icon_choco_chalk.webp",
+          "name": "초코청크 초크",
+          "count": 500
+        }
+      ],
+      "dateAdded": "2026-08-15T00:00:00Z",
+      "expirationDate": "2026-09-15T00:00:00Z"
     }
   ]
 }
