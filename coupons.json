@@ -137,6 +137,20 @@
       ],
       "dateAdded": "2026-08-15T00:00:00Z",
       "expirationDate": "2026-09-15T00:00:00Z"
+    },
+    {
+      "id": "fb078753-c3b2-4194-860f-dcda99198ce3",
+      "code": "CRLOYLOYKRATHONG",
+      "description": "크리스탈 쿠폰",
+      "rewards": [
+        {
+          "image": "images/Currency_crystal.webp",
+          "name": "크리스탈",
+          "count": 1000
+        }
+      ],
+      "dateAdded": "2026-11-24T00:00:00Z",
+      "expirationDate": "2026-12-24T00:00:00Z"
     }
   ]
 }
